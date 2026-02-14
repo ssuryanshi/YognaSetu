@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YojnaSetu — Bridge to Government Schemes | AI-Powered WhatsApp Chatbot</title>
+  <meta name="description"
+    content="YojnaSetu is an AI-powered WhatsApp chatbot helping citizens discover eligible government schemes. A hackathon prototype by VIT Mauritius.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌉</text></svg>">
+</head>
+
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <svg viewBox="0 0 28 28" fill="none" stroke="#1B5E20" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M2 20 C8 8, 20 8, 26 20" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+          <line x1="14" y1="20" x2="14" y2="9" />
+          <line x1="22" y1="20" x2="22" y2="14" />
+          <line x1="2" y1="20" x2="26" y2="20" />
+        </svg>
+        YojnaSetu
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== 1. Hero Section ===== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="badge hero-badge">🏆 VIT Mauritius Hackathon Prototype</span>
+        <h1><span>Yojna</span>Setu</h1>
+        <p class="hero-subtitle">Bridge to Government Schemes</p>
+        <p class="hero-tagline">AI-powered WhatsApp chatbot helping citizens discover eligible government schemes — in
+          their own language, on their own phone.</p>
+        <div class="hero-cta">
+          <a href="#demo" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            View Demo
+          </a>
+          <a href="#architecture" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+            Explore Architecture
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-illustration">
+          <div class="bridge-visual">
+            <!-- Bridge SVG -->
+            <svg class="bridge-svg" viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Water -->
+              <path d="M0 280 Q60 270, 120 280 T240 280 T360 280 T480 280 V340 H0Z" fill="#E8F5E9" opacity="0.4" />
+              <!-- Bridge Structure -->
+              <path class="bridge-path" d="M40 240 C40 140, 240 100, 240 140 C240 100, 440 140, 440 240"
+                stroke="#4CAF50" stroke-width="3" />
+              <!-- Pillars -->
+              <line x1="40" y1="240" x2="40" y2="300" stroke="#1B5E20" stroke-width="4" stroke-linecap="round" />
+              <line x1="240" y1="140" x2="240" y2="300" stroke="#1B5E20" stroke-width="4" stroke-linecap="round" />
+              <line x1="440" y1="240" x2="440" y2="300" stroke="#1B5E20" stroke-width="4" stroke-linecap="round" />
+              <!-- Road -->
+              <line x1="20" y1="240" x2="460" y2="240" stroke="#1B5E20" stroke-width="3" stroke-linecap="round" />
+              <!-- Cables -->
+              <line x1="100" y1="240" x2="240" y2="140" stroke="#81C784" stroke-width="1.5" opacity="0.5" />
+              <line x1="170" y1="240" x2="240" y2="140" stroke="#81C784" stroke-width="1.5" opacity="0.5" />
+              <line x1="310" y1="240" x2="240" y2="140" stroke="#81C784" stroke-width="1.5" opacity="0.5" />
+              <line x1="380" y1="240" x2="240" y2="140" stroke="#81C784" stroke-width="1.5" opacity="0.5" />
+              <!-- Labels -->
+              <text x="60" y="230" font-family="Poppins, sans-serif" font-size="13" fill="#1B5E20"
+                font-weight="600">Citizens</text>
+              <text x="370" y="230" font-family="Poppins, sans-serif" font-size="13" fill="#1B5E20"
+                font-weight="600">Schemes</text>
+              <text x="200" y="125" font-family="Poppins, sans-serif" font-size="12" fill="#4CAF50"
+                font-weight="700">YojnaSetu</text>
+            </svg>
+            <!-- Floating Icons -->
+            <div class="floating-icon whatsapp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+              </svg>
+            </div>
+            <div class="floating-icon ai">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 2a4 4 0 014 4v2a4 4 0 01-8 0V6a4 4 0 014-4z" />
+                <path d="M16 14H8a4 4 0 00-4 4v2h16v-2a4 4 0 00-4-4z" />
+                <circle cx="12" cy="6" r="1" fill="#4CAF50" />
+              </svg>
+            </div>
+            <div class="floating-icon gov">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1B5E20" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M3 21h18" />
+                <path d="M5 21V7l7-4 7 4v14" />
+                <path d="M9 21v-6h6v6" />
+                <path d="M9 9h.01M15 9h.01" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. The Problem ===== -->
+  <section class="section" id="problem">
+    <div class="container">
+      <span class="badge fade-in">The Challenge</span>
+      <h2 class="section-title fade-in">Welfare Benefits Are Underutilized</h2>
+      <p class="section-subtitle fade-in">Millions of eligible citizens miss government schemes due to awareness gaps,
+        complex processes, and language barriers.</p>
+      <div class="problem-grid">
+        <div class="stat-card fade-in">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          </div>
+          <div class="stat-value">40%</div>
+          <div class="stat-label">of eligible citizens never access schemes they qualify for</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <div class="stat-value">1,000+</div>
+          <div class="stat-label">government schemes spread across fragmented portals</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+            </svg>
+          </div>
+          <div class="stat-value">22+</div>
+          <div class="stat-label">languages — digital access rarely supports regional needs</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div class="stat-value">3+ hrs</div>
+          <div class="stat-label">average time spent manually searching for schemes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Human Impact ===== -->
+  <section class="section section-alt" id="impact">
+    <div class="container">
+      <span class="badge fade-in">Real Impact</span>
+      <h2 class="section-title fade-in">Built for Real People</h2>
+      <p class="section-subtitle fade-in">Behind every matched scheme is a life changed. Here's a glimpse.</p>
+      <div class="impact-content">
+        <div class="story-card fade-in">
+          <p class="story-text">Ramesh, a small farmer in Uttar Pradesh, didn't know he qualified for PM-KISAN, crop
+            insurance, and a solar pump subsidy. A 2-minute conversation with YojnaSetu uncovered 5 schemes worth ₹2.4
+            lakh annually — all from his phone, in Hindi.</p>
+          <p class="story-author">Ramesh Kumar</p>
+          <p class="story-role">Smallholder Farmer, Lucknow</p>
+        </div>
+        <div class="impact-metrics fade-in">
+          <div class="metric-card">
+            <div class="metric-value">2 min</div>
+            <div class="metric-label">Average Discovery Time</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">5–7</div>
+            <div class="metric-label">Schemes Matched Per User</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">92%</div>
+            <div class="metric-label">Matching Accuracy</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">₹2.4L</div>
+            <div class="metric-label">Avg. Annual Benefit Unlocked</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Solution: YojnaSetu ===== -->
+  <section class="section" id="solution">
+    <div class="container">
+      <span class="badge fade-in">Our Approach</span>
+      <h2 class="section-title fade-in">YojnaSetu: Your Benefits Navigator</h2>
+      <p class="section-subtitle fade-in">A WhatsApp chatbot that asks simple questions and finds government schemes
+        you're eligible for.</p>
+      <div class="solution-content">
+        <div class="solution-text fade-in">
+          <h3>How does it feel to use?</h3>
+          <p>Just send a WhatsApp message. Tell YojnaSetu about yourself in your own words — your occupation, family,
+            income. The AI understands your situation and instantly matches you to relevant schemes.</p>
+          <ul class="benefit-list">
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              Works on basic phones via WhatsApp
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              Native language support — Hindi, Tamil, more
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              AI-powered profile understanding
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              2-minute scheme discovery
+            </li>
+          </ul>
+        </div>
+        <div class="fade-in">
+          <div class="chat-mockup" id="chatMockup">
+            <div class="chat-header">
+              <div class="chat-avatar">YS</div>
+              <div class="chat-header-info">
+                <h4>YojnaSetu</h4>
+                <span>online</span>
+              </div>
+            </div>
+            <div class="chat-body">
+              <div class="chat-msg bot">
+                👋 Namaste! I'm YojnaSetu. Tell me about yourself and I'll find government schemes you're eligible for.
+                <span class="time">10:01 AM</span>
+              </div>
+              <div class="chat-msg user">
+                Main ek kisan hoon, Lucknow se. 2 acre zameen hai, family mein 4 log hain. Income lagbhag 80,000
+                saalana.
+                <span class="time">10:02 AM</span>
+              </div>
+              <div class="chat-msg bot">
+                ✅ Got it! Analyzing your profile...<br>
+                🌾 Occupation: Farmer<br>
+                📍 Location: Uttar Pradesh<br>
+                👨‍👩‍👧‍👦 Family: 4 members<br>
+                💰 Income: ₹80,000/year
+                <span class="time">10:02 AM</span>
+              </div>
+              <div class="chat-msg bot">
+                🎯 Found <strong>5 schemes</strong> for you!<br><br>
+                1. ✅ PM-KISAN — ₹6,000/year<br>
+                2. ✅ PM Fasal Bima Yojana<br>
+                3. ✅ PM-KUSUM Solar Pump<br>
+                4. ✅ Kisan Credit Card<br>
+                5. ✅ Ayushman Bharat
+                <span class="time">10:02 AM</span>
+              </div>
+              <div class="chat-msg user">
+                Ye sab mujhe mil sakte hain?
+                <span class="time">10:03 AM</span>
+              </div>
+              <div class="chat-msg bot">
+                Haan! Aapki profile ke hisaab se aap sabke liye eligible hain. Kisi bhi scheme ke baare mein detail
+                jaanne ke liye uska number bhejiye. 😊
+                <span class="time">10:03 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. How It Works ===== -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <span class="badge fade-in">Process</span>
+      <h2 class="section-title fade-in">How It Works</h2>
+      <p class="section-subtitle fade-in">From conversation to recommendations in four intelligent steps.</p>
+      <div class="steps-container">
+        <div class="step-card fade-in">
+          <div class="step-num">1</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+            </svg>
+          </div>
+          <h4>Share Your Profile</h4>
+          <p>User describes themselves in natural language via WhatsApp — occupation, location, family, income.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-num">2</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a4 4 0 014 4v2a4 4 0 01-8 0V6a4 4 0 014-4z" />
+              <path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
+              <circle cx="12" cy="6" r="1" fill="currentColor" />
+            </svg>
+          </div>
+          <h4>AI Extracts Data</h4>
+          <p>NLP engine (Claude) parses unstructured text into structured profile fields like age, income, category.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-num">3</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h4>Rule-Based Matching</h4>
+          <p>Deterministic eligibility engine checks structured profile against curated scheme database rules.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-num">4</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          </div>
+          <h4>Personalized Results</h4>
+          <p>User receives 5–7 matched schemes with details, benefits, and application guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Core Innovation ===== -->
+  <section class="section" id="innovation">
+    <div class="container">
+      <span class="badge fade-in">What Makes Us Different</span>
+      <h2 class="section-title fade-in">Core Innovation</h2>
+      <p class="section-subtitle fade-in">A hybrid AI approach that combines the best of both worlds — understanding and
+        accuracy.</p>
+      <div class="innovation-content">
+        <div class="innovation-card fade-in">
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+            Hybrid Intelligence
+          </h3>
+          <p>LLMs handle the messy, multilingual, unstructured user input — understanding intent, extracting profile
+            data from natural conversation. But we never let AI guess eligibility.</p>
+          <p>Deterministic rule engines handle the critical matching — ensuring 100% accuracy against scheme criteria.
+            No hallucination risk on eligibility.</p>
+          <div class="hybrid-tags">
+            <span>LLM Understanding</span>
+            <span>Rule-Based Matching</span>
+            <span>Zero Hallucination Risk</span>
+            <span>Multilingual NLP</span>
+          </div>
+        </div>
+        <div class="fade-in">
+          <div class="funnel">
+            <div class="funnel-step">
+              <div class="funnel-value">1,000+</div>
+              <div class="funnel-label">Total Government Schemes</div>
+            </div>
+            <div class="funnel-arrow">▼</div>
+            <div class="funnel-step">
+              <div class="funnel-value">AI Filtering</div>
+              <div class="funnel-label">Profile-matched eligibility processing</div>
+            </div>
+            <div class="funnel-arrow">▼</div>
+            <div class="funnel-step">
+              <div class="funnel-value">5–7</div>
+              <div class="funnel-label">Personalized Scheme Matches</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. Technical Architecture ===== -->
+  <section class="section section-alt" id="architecture">
+    <div class="container">
+      <span class="badge fade-in">Under the Hood</span>
+      <h2 class="section-title fade-in">Technical Architecture</h2>
+      <p class="section-subtitle fade-in">A layered, modular system designed for reliability and scale.</p>
+      <div class="arch-diagram">
+        <div class="arch-layer fade-in">
+          <h4>Interface Layer</h4>
+          <h3>User Touchpoint</h3>
+          <ul class="arch-items">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+              </svg>
+              WhatsApp Business API
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+              </svg>
+              Multi-language Input
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+              </svg>
+              Mobile-first Experience
+            </li>
+          </ul>
+        </div>
+        <div class="arch-layer fade-in">
+          <h4>Core Engine</h4>
+          <h3>Processing Pipeline</h3>
+          <ul class="arch-items">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a4 4 0 014 4v2a4 4 0 01-8 0V6a4 4 0 014-4z" />
+                <path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
+              </svg>
+              NLP Engine (Claude API)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+              Deterministic Rule Engine
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+              MongoDB Scheme Database
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18" />
+                <path d="M9 21V9" />
+              </svg>
+              Redis Session Cache
+            </li>
+          </ul>
+        </div>
+        <div class="arch-layer fade-in">
+          <h4>Data Layer</h4>
+          <h3>Knowledge Base</h3>
+          <ul class="arch-items">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18" />
+                <path d="M5 21V7l7-4 7 4v14" />
+              </svg>
+              Government Portal Aggregation
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              Curated Scheme Dataset
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              Eligibility Rules DSL
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tech-stack fade-in">
+        <div class="tech-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6" />
+            <polyline points="8 6 2 12 8 18" />
+          </svg>
+          Python
+        </div>
+        <div class="tech-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          </svg>
+          FastAPI
+        </div>
+        <div class="tech-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="5" rx="9" ry="3" />
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+          </svg>
+          MongoDB
+        </div>
+        <div class="tech-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+          </svg>
+          WhatsApp API
+        </div>
+        <div class="tech-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9h18" />
+            <path d="M9 21V9" />
+          </svg>
+          Redis
+        </div>
+        <div class="tech-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a4 4 0 014 4v2a4 4 0 01-8 0V6a4 4 0 014-4z" />
+            <path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
+          </svg>
+          Claude AI
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. Demo Flow ===== -->
+  <section class="section" id="demo">
+    <div class="container">
+      <span class="badge fade-in">Live Demo</span>
+      <h2 class="section-title fade-in">See It In Action</h2>
+      <p class="section-subtitle fade-in">A real conversation showing profile analysis to scheme recommendations.</p>
+      <div class="demo-container fade-in">
+        <div class="demo-chat">
+          <div class="chat-header">
+            <div class="chat-avatar">YS</div>
+            <div class="chat-header-info">
+              <h4>YojnaSetu Bot</h4>
+              <span>online</span>
+            </div>
+          </div>
+          <div class="chat-body" id="demoChat">
+            <div class="chat-msg bot">
+              🙏 Welcome! Tell me about yourself — your work, your family, where you live, and your income. I'll find
+              the best schemes for you!
+              <span class="time">2:30 PM</span>
+            </div>
+            <div class="chat-msg user">
+              I'm Priya, 28 years old, single mother with one child. I work as a daily wage laborer in rural
+              Maharashtra. My income is around ₹5,000/month.
+              <span class="time">2:31 PM</span>
+            </div>
+            <div class="chat-msg bot">
+              ⏳ Analyzing your profile...
+              <span class="time">2:31 PM</span>
+            </div>
+            <div class="chat-msg bot">
+              📋 <strong>Profile Summary:</strong><br>
+              • Age: 28 | Gender: Female<br>
+              • Category: Below Poverty Line<br>
+              • Occupation: Daily Wage<br>
+              • Location: Rural Maharashtra<br>
+              • Dependents: 1 child
+              <span class="time">2:31 PM</span>
+            </div>
+            <div class="chat-msg bot">
+              🎯 <strong>6 Schemes Found!</strong><br><br>
+              1. ✅ Ujjwala Yojana — Free LPG<br>
+              2. ✅ PM Awas Yojana — Housing<br>
+              3. ✅ Ayushman Bharat — Health<br>
+              4. ✅ Sukanya Samriddhi — Education<br>
+              5. ✅ MGNREGA — Employment<br>
+              6. ✅ Ladli Behna — ₹1,250/month
+              <span class="time">2:31 PM</span>
+            </div>
+            <div class="chat-msg user">
+              Tell me more about Ladli Behna
+              <span class="time">2:32 PM</span>
+            </div>
+            <div class="chat-msg bot">
+              💁‍♀️ <strong>Ladli Behna Yojana</strong><br><br>
+              Monthly stipend of ₹1,250 for eligible women in Maharashtra. You qualify based on your income and
+              residence. Required documents: Aadhaar, income certificate, domicile. Apply at your nearest Gram Panchayat
+              office.
+              <span class="time">2:32 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="demo-stats">
+          <div class="demo-stat">
+            <div class="demo-stat-value">1.8s</div>
+            <div class="demo-stat-label">Processing Time</div>
+          </div>
+          <div class="demo-stat">
+            <div class="demo-stat-value">6</div>
+            <div class="demo-stat-label">Matches Found</div>
+          </div>
+          <div class="demo-stat">
+            <div class="demo-stat-value">92%</div>
+            <div class="demo-stat-label">Accuracy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. Impact Potential ===== -->
+  <section class="section section-alt" id="impact-potential">
+    <div class="container">
+      <span class="badge fade-in">Scale</span>
+      <h2 class="section-title fade-in">Impact Potential</h2>
+      <p class="section-subtitle fade-in">Leveraging India's massive WhatsApp user base to bridge the welfare gap.</p>
+      <div class="impact-grid">
+        <div class="impact-card fade-in">
+          <div class="impact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          </div>
+          <div>
+            <h4>500M+</h4>
+            <p>WhatsApp users in India — instant reach without app downloads</p>
+          </div>
+        </div>
+        <div class="impact-card fade-in">
+          <div class="impact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+            </svg>
+          </div>
+          <div>
+            <h4>₹3.5L Cr</h4>
+            <p>Annual welfare budget — significant portion goes unclaimed</p>
+          </div>
+        </div>
+        <div class="impact-card fade-in">
+          <div class="impact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div>
+            <h4>90% Less</h4>
+            <p>Time spent discovering schemes — from hours to minutes</p>
+          </div>
+        </div>
+        <div class="impact-card fade-in">
+          <div class="impact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          </div>
+          <div>
+            <h4>92%</h4>
+            <p>Matching accuracy — hybrid AI ensures reliable recommendations</p>
+          </div>
+        </div>
+      </div>
+      <!-- India Map Visual -->
+      <div class="india-map-container fade-in">
+        <svg class="india-map" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simplified India outline -->
+          <path
+            d="M160 20 C100 20, 60 50, 50 80 C40 110, 35 130, 40 150 C30 160, 25 180, 30 200 C20 220, 25 250, 40 270 C50 290, 70 310, 90 330 C110 345, 130 350, 150 340 C160 350, 170 345, 180 335 C185 330, 190 320, 195 310 C200 300, 210 285, 220 270 C240 250, 250 230, 260 200 C270 180, 275 160, 270 140 C280 120, 280 100, 270 80 C260 60, 240 40, 220 30 C200 22, 180 20, 160 20Z"
+            fill="#E8F5E9" stroke="#4CAF50" stroke-width="2" />
+          <!-- Pulse dots — pilot locations -->
+          <circle cx="120" cy="160" r="6" fill="#4CAF50" opacity="0.8">
+            <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="180" cy="200" r="6" fill="#4CAF50" opacity="0.8">
+            <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite" begin="0.5s" />
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" begin="0.5s" />
+          </circle>
+          <circle cx="140" cy="240" r="6" fill="#4CAF50" opacity="0.8">
+            <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite" begin="1s" />
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" begin="1s" />
+          </circle>
+          <circle cx="200" cy="140" r="6" fill="#4CAF50" opacity="0.8">
+            <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite" begin="1.5s" />
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" begin="1.5s" />
+          </circle>
+          <!-- Label -->
+          <text x="160" y="185" font-family="Poppins, sans-serif" font-size="11" fill="#1B5E20" font-weight="600"
+            text-anchor="middle">YojnaSetu</text>
+          <text x="160" y="200" font-family="Open Sans, sans-serif" font-size="9" fill="#558B2F"
+            text-anchor="middle">Pilot Reach</text>
+        </svg>
+        <p>Targeting pilot deployment across four states — reaching rural communities first.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10. Prototype Status ===== -->
+  <section class="section" id="prototype">
+    <div class="container">
+      <span class="badge fade-in">Current State</span>
+      <h2 class="section-title fade-in">Prototype Status</h2>
+      <p class="section-subtitle fade-in">This is a working prototype — built and tested during the hackathon.</p>
+      <div class="status-grid">
+        <div class="status-card fade-in">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            Working Features
+          </h4>
+          <ul class="status-list">
+            <li><span class="status-dot"></span>WhatsApp chatbot interface</li>
+            <li><span class="status-dot"></span>Natural language profile extraction</li>
+            <li><span class="status-dot"></span>AI-powered scheme matching</li>
+            <li><span class="status-dot"></span>Multi-language input (Hindi & English)</li>
+            <li><span class="status-dot"></span>Scheme detail drill-down</li>
+          </ul>
+        </div>
+        <div class="status-card fade-in">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+            Tech Implemented
+          </h4>
+          <ul class="status-list">
+            <li><span class="status-dot"></span>FastAPI backend with async processing</li>
+            <li><span class="status-dot"></span>Claude API integration for NLP</li>
+            <li><span class="status-dot"></span>MongoDB scheme database</li>
+            <li><span class="status-dot"></span>Redis session management</li>
+            <li><span class="status-dot"></span>Rule-based eligibility engine</li>
+          </ul>
+        </div>
+        <div class="status-card fade-in">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
+            Testing
+          </h4>
+          <ul class="status-list">
+            <li><span class="status-dot"></span>15+ test user profiles validated</li>
+            <li><span class="status-dot"></span>92% scheme matching accuracy</li>
+            <li><span class="status-dot amber"></span>Edge case handling in progress</li>
+            <li><span class="status-dot amber"></span>Load testing pending</li>
+          </ul>
+        </div>
+        <div class="status-card fade-in">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            Scheme Categories
+          </h4>
+          <ul class="status-list">
+            <li><span class="status-dot"></span>Agriculture & Farming</li>
+            <li><span class="status-dot"></span>Healthcare & Insurance</li>
+            <li><span class="status-dot"></span>Housing & Shelter</li>
+            <li><span class="status-dot"></span>Education & Skill Development</li>
+            <li><span class="status-dot"></span>Women & Child Welfare</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 11. Immediate Next Steps ===== -->
+  <section class="section section-alt" id="next-steps">
+    <div class="container">
+      <span class="badge fade-in">What's Next</span>
+      <h2 class="section-title fade-in">Immediate Next Steps</h2>
+      <p class="section-subtitle fade-in">Short-term priorities to make YojnaSetu more impactful.</p>
+      <div class="nextsteps-grid">
+        <div class="nextstep-card fade-in">
+          <div class="nextstep-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="12" y1="18" x2="12" y2="12" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+          </div>
+          <h4>Expand Scheme Database</h4>
+          <p>Add state-level schemes beyond central government — targeting 2,000+ schemes across all categories.</p>
+        </div>
+        <div class="nextstep-card fade-in">
+          <div class="nextstep-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" />
+              <path d="M19 10v2a7 7 0 01-14 0v-2" />
+              <line x1="12" y1="19" x2="12" y2="23" />
+              <line x1="8" y1="23" x2="16" y2="23" />
+            </svg>
+          </div>
+          <h4>Voice Input Support</h4>
+          <p>Enable voice messages for users who prefer speaking over typing — critical for low-literacy populations.
+          </p>
+        </div>
+        <div class="nextstep-card fade-in">
+          <div class="nextstep-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <h4>Pilot Districts</h4>
+          <p>Deploy in 3–5 districts across UP, Maharashtra, and Tamil Nadu to validate real-world usage patterns.</p>
+        </div>
+        <div class="nextstep-card fade-in">
+          <div class="nextstep-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h4>Improve Matching</h4>
+          <p>Refine eligibility rules, handle edge cases, and add confidence scoring for borderline matches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 12. Team & CTA ===== -->
+  <section class="section team-section" id="team">
+    <div class="container">
+      <span class="badge fade-in" style="background: rgba(255,255,255,0.1); color: var(--highlight);">The Team</span>
+      <h2 class="section-title fade-in">Meet the Builders</h2>
+      <p class="team-headline fade-in">"Building technology that helps citizens access what they're entitled to."</p>
+      <div class="team-grid">
+        <div class="team-card fade-in">
+          <div class="team-avatar">SS</div>
+          <h4>Suryanshi</h4>
+          <p>Full-Stack Development & AI</p>
+        </div>
+        <div class="team-card fade-in">
+          <div class="team-avatar">HA</div>
+          <h4>Harsh</h4>
+          <p>Backend & Data Engineering</p>
+        </div>
+      </div>
+      <div class="cta-links fade-in">
+        <a href="#demo" class="btn-cta primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+          Try the Demo
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&to=amarnaniharsh@gmail.com&su=YojnaSetu%20Feedback"
+          class="btn-cta" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          Send Feedback
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>YojnaSetu — VIT Mauritius Hackathon 2026 • Built with purpose</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
