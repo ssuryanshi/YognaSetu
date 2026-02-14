@@ -31,21 +31,6 @@ The result: billions in welfare budgets go unclaimed, and the people who need it
 - ⚡ **2-minute discovery** — from conversation to personalized recommendations
 - 🎯 **92% matching accuracy** — powered by a hybrid AI approach
 
-## 🧠 Core Innovation: Hybrid AI Architecture
-
-YojnaSetu uses a **hybrid intelligence** approach that combines the strengths of two paradigms:
-
-| Component | Role | Why |
-|-----------|------|-----|
-| **LLM (Claude API)** | Understands messy, multilingual, unstructured user input | Extracts structured profile data from natural conversation |
-| **Deterministic Rule Engine** | Matches profiles against scheme eligibility criteria | Ensures **zero hallucination risk** on eligibility decisions |
-
-> **Key Insight:** We never let the AI *guess* eligibility. The LLM handles understanding; the rules handle accuracy.
-
-```
-1,000+ Schemes → AI Profile Matching → 5–7 Personalized Results
-```
-
 ## 🏗️ Technical Architecture
 
 ```
@@ -95,7 +80,7 @@ Step 4: User receives 5–7 matched schemes with details
 
 The portfolio website includes a **live demo video** of the bot in action, showing a real conversation from profile input to scheme recommendations.
 
-**[🌐 View Portfolio Website →](https://harsh160804.github.io/YojnaSetu/)**
+**[🌐 View Portfolio Website →]((https://github.com/ssuryanshi/YognaSetu.git))**
 
 ## 📊 Impact Potential
 
@@ -116,18 +101,6 @@ The portfolio website includes a **live demo video** of the bot in action, showi
 - ✅ Multi-language input (Hindi & English)
 - ✅ Scheme detail drill-down
 
-### In Progress
-- 🟡 Edge case handling
-- 🟡 Load testing
-- 🟡 Voice input support
-
-## 🗺️ Roadmap
-
-- [ ] Expand scheme database to include state-level schemes (2,000+ target)
-- [ ] Implement voice input support for low-literacy populations
-- [ ] Pilot deployments in 3–5 districts across UP, Maharashtra, Tamil Nadu
-- [ ] Add confidence scoring for borderline eligibility matches
-- [ ] Regional language expansion beyond Hindi and English
 
 ## 🏃 Run Locally
 
@@ -135,7 +108,7 @@ The portfolio website is a static site with no build dependencies:
 
 ```bash
 # Clone the repository
-git clone https://github.com/HARSH160804/YojnaSetu.git
+git clone (https://github.com/ssuryanshi/YognaSetu.git)
 cd YojnaSetu
 
 # Start a local server
@@ -163,13 +136,7 @@ YojnaSetu/
 | **Suryanshi** | Full-Stack Development & AI |
 | **Harsh** | Backend & Data Engineering |
 
-## 📬 Feedback
-
-Have suggestions or want to collaborate?  
-📧 [amarnaniharsh@gmail.com](mailto:amarnaniharsh@gmail.com)
-
----
 
 <p align="center">
-  <strong>YojnaSetu</strong> — VIT Mauritius Hackathon 2026 • Built with purpose 🌱
+  <strong>YojnaSetu</strong> — Built with purpose 🌱
 </p>
