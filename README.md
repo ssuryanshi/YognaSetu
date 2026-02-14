@@ -1,7 +1,4 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
-  <img src="https://img.shields.io/badge/AI-Claude%20API-blueviolet?style=for-the-badge" alt="Claude AI">
-</p>
+
 
 <h1 align="center">🌉 YojnaSetu</h1>
 <h3 align="center">Bridge to Government Schemes</h3>
