@@ -1,6 +1,4 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Hackathon-VIT%20Mauritius%202026-brightgreen?style=for-the-badge" alt="Hackathon">
-  <img src="https://img.shields.io/badge/Status-Prototype-yellow?style=for-the-badge" alt="Status">
   <img src="https://img.shields.io/badge/Platform-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
   <img src="https://img.shields.io/badge/AI-Claude%20API-blueviolet?style=for-the-badge" alt="Claude AI">
 </p>
