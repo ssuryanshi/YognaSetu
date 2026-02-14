@@ -80,7 +80,6 @@ Step 4: User receives 5–7 matched schemes with details
 
 The portfolio website includes a **live demo video** of the bot in action, showing a real conversation from profile input to scheme recommendations.
 
-**[🌐 View Portfolio Website →]((https://github.com/ssuryanshi/YognaSetu.git))**
 
 ## 📊 Impact Potential
 
