@@ -135,6 +135,7 @@ YojnaSetu/
 | **Suryanshi** | Full-Stack Development & AI |
 | **Harsh** | Backend & Data Engineering |
 
+**Landing Page** https://yojna-setu-4csf.vercel.app
 
 <p align="center">
   <strong>YojnaSetu</strong> — Built with purpose 🌱
