@@ -25,7 +25,9 @@
 }
 
 /* --- Reset & Base --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -45,7 +47,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.25;
@@ -61,6 +68,7 @@ a {
   text-decoration: none;
   transition: var(--transition);
 }
+
 a:hover {
   color: var(--dark-text);
 }
@@ -115,6 +123,7 @@ a:hover {
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
+
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
@@ -173,6 +182,7 @@ a:hover {
   transition: var(--transition);
   position: relative;
 }
+
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -183,9 +193,11 @@ a:hover {
   background: var(--accent);
   transition: var(--transition);
 }
+
 .nav-links a:hover {
   color: var(--dark-text);
 }
+
 .nav-links a:hover::after {
   width: 100%;
 }
@@ -199,6 +211,7 @@ a:hover {
   border: none;
   padding: 4px;
 }
+
 .nav-toggle span {
   display: block;
   width: 24px;
@@ -314,6 +327,7 @@ a:hover {
   color: var(--white);
   box-shadow: 0 4px 16px rgba(76, 175, 80, 0.3);
 }
+
 .btn-primary:hover {
   background: var(--dark-text);
   color: var(--white);
@@ -326,6 +340,7 @@ a:hover {
   color: var(--dark-text);
   border: 2px solid rgba(27, 94, 32, 0.15);
 }
+
 .btn-secondary:hover {
   border-color: var(--accent);
   color: var(--accent);
@@ -368,7 +383,9 @@ a:hover {
 }
 
 @keyframes drawBridge {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* Floating icons */
@@ -410,8 +427,15 @@ a:hover {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 .floating-icon.gov {
@@ -419,8 +443,15 @@ a:hover {
 }
 
 @keyframes floatCenter {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-12px); }
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-12px);
+  }
 }
 
 /* ============================================
@@ -441,6 +472,7 @@ a:hover {
   transition: var(--transition);
   border: 1px solid rgba(27, 94, 32, 0.05);
 }
+
 .stat-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--card-shadow-hover);
@@ -544,6 +576,7 @@ a:hover {
   transition: var(--transition);
   border: 1px solid rgba(27, 94, 32, 0.05);
 }
+
 .metric-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--card-shadow-hover);
@@ -700,16 +733,40 @@ a:hover {
 }
 
 @keyframes chatFade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.chat-msg:nth-child(1) { animation-delay: 0.2s; }
-.chat-msg:nth-child(2) { animation-delay: 0.6s; }
-.chat-msg:nth-child(3) { animation-delay: 1.0s; }
-.chat-msg:nth-child(4) { animation-delay: 1.4s; }
-.chat-msg:nth-child(5) { animation-delay: 1.8s; }
-.chat-msg:nth-child(6) { animation-delay: 2.2s; }
+.chat-msg:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.chat-msg:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.chat-msg:nth-child(3) {
+  animation-delay: 1.0s;
+}
+
+.chat-msg:nth-child(4) {
+  animation-delay: 1.4s;
+}
+
+.chat-msg:nth-child(5) {
+  animation-delay: 1.8s;
+}
+
+.chat-msg:nth-child(6) {
+  animation-delay: 2.2s;
+}
 
 /* ============================================
    5. How It Works
@@ -744,6 +801,7 @@ a:hover {
   transition: var(--transition);
   border: 1px solid rgba(27, 94, 32, 0.05);
 }
+
 .step-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--card-shadow-hover);
@@ -859,10 +917,12 @@ a:hover {
   border-radius: var(--radius) var(--radius) 0 0;
   max-width: 100%;
 }
+
 .funnel-step:nth-child(2) {
   background: rgba(76, 175, 80, 0.14);
   max-width: 75%;
 }
+
 .funnel-step:nth-child(3) {
   background: rgba(76, 175, 80, 0.22);
   border-radius: 0 0 var(--radius) var(--radius);
@@ -906,6 +966,7 @@ a:hover {
   transition: var(--transition);
   border-bottom: 1px solid rgba(27, 94, 32, 0.05);
 }
+
 .arch-layer:hover {
   transform: translateY(-4px);
   box-shadow: var(--card-shadow-hover);
@@ -970,6 +1031,7 @@ a:hover {
   gap: 8px;
   transition: var(--transition);
 }
+
 .tech-tag:hover {
   border-color: var(--accent);
   box-shadow: var(--card-shadow);
@@ -986,8 +1048,13 @@ a:hover {
    8. Demo Flow
    ============================================ */
 .demo-container {
-  max-width: 440px;
+  max-width: 600px;
   margin: 0 auto;
+}
+
+.demo-video {
+  display: flex;
+  justify-content: center;
 }
 
 .demo-chat {
@@ -1047,6 +1114,7 @@ a:hover {
   transition: var(--transition);
   border: 1px solid rgba(27, 94, 32, 0.05);
 }
+
 .impact-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--card-shadow-hover);
@@ -1115,6 +1183,7 @@ a:hover {
   border: 1px solid rgba(27, 94, 32, 0.05);
   transition: var(--transition);
 }
+
 .status-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--card-shadow-hover);
@@ -1182,6 +1251,7 @@ a:hover {
   position: relative;
   overflow: hidden;
 }
+
 .nextstep-card::before {
   content: '';
   position: absolute;
@@ -1191,6 +1261,7 @@ a:hover {
   height: 4px;
   background: linear-gradient(90deg, var(--accent), var(--highlight));
 }
+
 .nextstep-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--card-shadow-hover);
@@ -1268,6 +1339,7 @@ a:hover {
   transition: var(--transition);
   backdrop-filter: blur(8px);
 }
+
 .team-card:hover {
   background: rgba(255, 255, 255, 0.14);
   transform: translateY(-4px);
@@ -1321,6 +1393,7 @@ a:hover {
   background: transparent;
   cursor: pointer;
 }
+
 .btn-cta:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: var(--white);
@@ -1332,6 +1405,7 @@ a:hover {
   background: var(--accent);
   border-color: var(--accent);
 }
+
 .btn-cta.primary:hover {
   background: var(--highlight);
   border-color: var(--highlight);
@@ -1356,33 +1430,42 @@ a:hover {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
   .hero-content {
     max-width: 100%;
   }
+
   .hero-cta {
     justify-content: center;
   }
+
   .hero-tagline {
     margin-left: auto;
     margin-right: auto;
   }
+
   .hero-visual {
     order: -1;
   }
+
   .bridge-visual {
     height: 260px;
   }
+
   .steps-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .steps-container::before {
     display: none;
   }
+
   .innovation-content,
   .impact-content,
   .solution-content {
     grid-template-columns: 1fr;
   }
+
   .arch-diagram {
     grid-template-columns: 1fr;
   }
@@ -1392,18 +1475,23 @@ a:hover {
   .section {
     padding: 72px 0;
   }
+
   .section-title {
     font-size: 2rem;
   }
+
   .section-subtitle {
     font-size: 1rem;
   }
+
   .hero h1 {
     font-size: 2.75rem;
   }
+
   .hero-subtitle {
     font-size: 1.15rem;
   }
+
   .nav-links {
     display: none;
     position: absolute;
@@ -1417,27 +1505,35 @@ a:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     border-radius: 0 0 var(--radius) var(--radius);
   }
+
   .nav-links.active {
     display: flex;
   }
+
   .nav-toggle {
     display: flex;
   }
+
   .steps-container {
     grid-template-columns: 1fr;
   }
+
   .impact-grid {
     grid-template-columns: 1fr;
   }
+
   .impact-metrics {
     grid-template-columns: 1fr;
   }
+
   .problem-grid {
     grid-template-columns: 1fr;
   }
+
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .demo-stats {
     flex-direction: column;
     gap: 16px;
@@ -1448,18 +1544,23 @@ a:hover {
   .container {
     padding: 0 16px;
   }
+
   .hero h1 {
     font-size: 2.25rem;
   }
+
   .section-title {
     font-size: 1.75rem;
   }
+
   .stat-card .stat-value {
     font-size: 2rem;
   }
+
   .team-grid {
     grid-template-columns: 1fr;
   }
+
   .hero-cta {
     flex-direction: column;
     align-items: center;
